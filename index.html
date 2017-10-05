@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="js/raphael/raphael.min.js"></script>
+    <script src="js/mapael/jquery.mapael.min.js" charset="utf-8" ></script>
+    <script src="js/mapael/maps/world_countries.js" charset="utf-8" ></script>
+    <script src="js/main.js" charset="utf-8" ></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <title>Alex Wines</title>
+
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="map">Alternative content</div>
+    </div>
+
+
+    <!-- Start Journey Modal -->
+    <div class="modal fade" id="js-start-journey-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Start</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            My Journey
+          </div>
+          <div class="modal-footer">
+            <button id="js-start-journey-next" type="button" class="btn btn-primary">Start Journey</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Delhi Modal -->
+    <div class="modal fade" id="js-new-delhi-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Delhi</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <audio id="js-new-delhi-audio" src="audio/new-delhi.mp3" controls> </audio>
+            <p>I was nine years old, standing on a train platform in New Delhi when a girl my age carrying an infant approached me and extended her upturned palm. Before I could respond, a police officer appeared, struck the girl in the legs with a bamboo rod and chased her out of the station, leaving me shocked and confused. What did this girl do to deserve such treatment? Why did I have the right to stand there unharmed? This incident profoundly impacted my worldview at a young age. From that moment, I have been determined to build relationships with people from disadvantaged communities and help create opportunities that allow them to hope for a better future.</p>
+          </div>
+          <div class="modal-footer">
+            <button id="js-new-delhi-prev" type="button" class="btn btn-primary">Back to the start!</button>
+            <button id="js-new-delhi-next" type="button" class="btn btn-primary">On to California!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- California Modal -->
+    <div class="modal fade" id="js-california-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">California</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <audio id="js-california-audio" src="audio/california.mp3" controls> </audio>
+            <p>Throughout my youth, I volunteered in various capacities ranging from working in soup kitchens to tutoring children from low-income neighborhoods. As I bonded with the children I tutored and saw them flourish, I came to recognize the power of human connection and the need for mentorship in the lives of young people growing up under trying circumstances. I wanted to further immerse myself in the world of the kids I worked with. This desire led me to my first post-college job, working at an organization in the Dominican Republic for which I volunteered during college.</p>
+          </div>
+          <div class="modal-footer">
+            <button id="js-california-prev" type="button" class="btn btn-primary">Back to New Delhi!</button>
+            <button id="js-california-next" type="button" class="btn btn-primary">On to the Dominican Republic!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dominican Republic Modal -->
+    <div class="modal fade" id="js-dominican-republic-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dominican Republic</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <audio id="js-dominican-republic-audio" src="audio/dominican-republic.mp3" controls> </audio>
+            <p>I moved to the Dominican Republic to work in a school for children living in abject poverty. However, shortly after my arrival, I was asked to fill the newly-vacant role of full-time caregiver for a group of boys ranging from six to nine years old. Despite the heightened responsibility, caring for these boys is one of the highlights of my life. Each morning at dawn, I enjoyed a cup of coffee in peace before braving the chaos of getting seven rambunctious boys ready for school. In the evenings, we would run through the house with whatever makeshift weapons we could find to chase off the ‘bruja’ - an imaginary witch that flew through their bedroom window at night. No period of my life has been so physically and emotionally demanding, yet rarely have I experienced such joy. Fostering positive growth in the lives of these boys required that I develop a nuanced understanding of the circumstances surrounding their childhood. This understanding continues to impact the way I see the world around me.</p>
+
+            <p>I was surprised by the nearly ubiquitous presence of technology in the poverty-stricken town where I lived in the Dominican Republic. People lived in tiny, dirt-floor homes, yet managed to pay for smartphones. Fascinated with the impact of technology on my new surroundings, I decided to learn to write code. Much of my free time in the Dominican Republic was spent building clones of popular web applications, including some of the social media sites that compel many of my Dominican friends to own a smartphone. I am grateful that technology allows me to keep in touch with my friends in the Dominican Republic, yet I am conflicted knowing that jobs in the tech industry have yet to reach their community and help counterbalance this new expense in their lives.</p>
+          </div>
+          <div class="modal-footer">
+            <button id="js-dominican-republic-prev" type="button" class="btn btn-primary">Back to California!</button>
+            <button id="js-dominican-republic-next" type="button" class="btn btn-primary">On to Phoenix!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phoenix Modal -->
+    <div class="modal fade" id="js-phoenix-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Phoenix</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <audio id="js-phoenix-audio" src="audio/phoenix.mp3" controls> </audio>
+            <p>In August of 2014, my father-in-law was diagnosed with terminal cancer. I made the difficult decision to leave the Dominican Republic, as my wife and I were engaged at the time and wanted to do whatever we could to ensure he would be there to walk her down the aisle. I left the boys in the qualified hands of a local Dominican woman who replaced me, yet the same confusion I felt at the train station in India permeates my thoughts and memories of the Dominican Republic. I fear that lack of opportunity will cause the boys I lived with to fall victim to the endemic poverty surrounding them.</p>
+
+            <p>Upon my return to the United States, I started to work on freelance web development projects while taking classes to further my skills as a developer. Shortly thereafter, I decided to start my own business, primarily collaborating with successful business owners to optimize antiquated systems used by their companies. My passion for connecting with people allowed me to quickly establish a substantial client base. Additionally, creating my own schedule allowed me to prioritize time with my father-in-law in his final months and care for my wife as we grieved his passing.</p>
+
+            <p>Growing a business in an industry with such global impact has been an invigorating experience. I am fortunate to have realized many of the goals I set out to accomplish, and as I look forward to the next phase of my career, I am compelled to share the economic opportunities enabling my success with disadvantaged communities. My dream is to help individuals living in poverty develop the necessary skills for successful careers and facilitate connections between these individuals and employers. In turn, I hope these new jobs will alleviate some of the social issues plaguing impoverished communities and provide a brighter future for children like the boys I lived with.</p>
+          </div>
+          <div class="modal-footer">
+            <button id="js-phoenix-prev" type="button" class="btn btn-primary">Back to the Dominican Republic!</button>
+            <button id="js-phoenix-next" type="button" class="btn btn-primary">On to Cornell!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cornell Modal -->
+    <div class="modal fade" id="js-cornell-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cornell</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <audio id="js-cornell-audio" src="audio/cornell.mp3" controls> </audio>
+            Third
+          </div>
+          <div class="modal-footer">
+            <button id="js-cornell-prev" type="button" class="btn btn-primary">Back to Phoenix!</button>
+            <button id="js-cornell-next" type="button" class="btn btn-primary">On to Cornell!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
+</html>
