@@ -68,6 +68,10 @@ svg {
   overflow: scroll;
 }
 
+.start {
+  margin: 50px 0;
+}
+
 .transcript p,
 .start p {
   font-family: 'Open Sans', sans-serif;
