@@ -97,7 +97,6 @@ svg {
   font-family: 'Open Sans', sans-serif;
   padding-top: 15px!important;
   padding-bottom: 15px!important;
-  border-radius: 0 0 4px 4px!important;
   font-size: 18px;
 }
 
@@ -109,4 +108,21 @@ svg {
 .btn.next {
   border-radius: 0 0 4px 0!important;
   margin-left: 1px!important;
+}
+
+.start-btn {
+  border-radius: 0 0 4px 4px!important;
+}
+
+.restart-btn {
+  margin: 0 auto;
+  padding: 18px 40px!important;
+}
+
+.end-modal {
+  height: 55px;
+}
+
+.zoomButton {
+  display: none;
 }

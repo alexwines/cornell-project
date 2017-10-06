@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
   modalInit = function(trigger,prev,next,city) {
     $(trigger).click(function(){
-      if ( trigger == "#js-new-delhi-prev" ) {
+      if ( trigger == "#js-new-delhi-prev" || trigger == "#js-end-journey" ) {
         $(prev).modal('hide');
         stopAudio();
         zoomOut();
@@ -250,6 +250,7 @@ $( document ).ready(function() {
   modalInit('#js-phoenix-prev', '#js-phoenix-modal', "#js-dominican-republic-modal", "dominicanRepublic"); // From California to New Delhi
   modalInit('#js-phoenix-next', '#js-phoenix-modal', "#js-cornell-modal", "cornell"); // From California to New Delhi
   modalInit('#js-cornell-prev', '#js-cornell-modal', "#js-phoenix-modal", "phoenix"); // From California to New Delhi
+  modalInit('#js-end-journey', '#js-cornell-modal', null, null); // From California to New Delhi
 
   // Show/Hide transcripts on journey slides
   toggleTranscript('new-delhi');

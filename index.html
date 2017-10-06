@@ -18,7 +18,12 @@
   <body>
 
     <div class="map-container">
-        <div class="map">Loading . . . </div>
+        <div class="map text-center">
+          <h2 class="col">Loading . . . </h2>
+        </div>
+        <div class="row">
+          <button class="btn restart-btn btn-primary" data-toggle="modal" data-target="#js-start-journey-modal">Restart Journey</button>
+        </div>
     </div>
 
 
@@ -87,7 +92,7 @@
           </div>
           <div class="modal-footer">
             <button id="js-new-delhi-prev" type="button" class="btn btn-primary prev col"><img src="images/left-arrow.png" class="direction-icon"> Back to the start</button>
-            <button id="js-new-delhi-next" type="button" class="btn btn-primary next col">On to California <img src="images/right-arrow.png" class="direction-icon"></button>
+            <button id="js-new-delhi-next" type="button" class="btn btn-primary next col">On to the Bay Area <img src="images/right-arrow.png" class="direction-icon"></button>
           </div>
         </div>
       </div>
@@ -98,7 +103,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h5 class="col modal-title">California</h5>
+            <h5 class="col modal-title">Bay Area</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -190,7 +195,7 @@
           </div>
 
           <div class="modal-footer">
-            <button id="js-dominican-republic-prev" type="button" class="btn col prev btn-primary"><img src="images/left-arrow.png" class="direction-icon"> Back to California</button>
+            <button id="js-dominican-republic-prev" type="button" class="btn col prev btn-primary"><img src="images/left-arrow.png" class="direction-icon"> Back to the Bay Area</button>
             <button id="js-dominican-republic-next" type="button" class="btn col next btn-primary">On to Phoenix <img src="images/right-arrow.png" class="direction-icon"></button>
           </div>
 
@@ -261,7 +266,7 @@
     <div class="modal fade" id="js-cornell-modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header text-center">
             <h5 class="col modal-title">Cornell</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -306,8 +311,8 @@
 
           </div>
           <div class="modal-footer">
-            <button id="js-cornell-prev" type="button" class="btn col prev btn-primary">Back to Phoenix</button>
-            <button id="js-cornell-next" type="button" class="btn col next btn-primary">The End</button>
+            <button id="js-cornell-prev" type="button" class="btn col prev btn-primary"><img src="images/left-arrow.png" class="direction-icon"> Back to Phoenix</button>
+            <button id="js-end-journey" data-dismiss="modal" type="button" class="btn col next end-modal btn-primary">The End</button>
           </div>
         </div>
       </div>
