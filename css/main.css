@@ -1,5 +1,15 @@
 .map-container {
-  margin-top: 40px;
+  margin-top: 20px;
+}
+
+h4 {
+  margin-top: 15px!important;
+  margin-left: 15px!important;
+  font-size: 15px!important;
+}
+
+h2,h4 {
+  font-family: 'Open Sans', sans-serif!important;
 }
 
 .direction-icon {
