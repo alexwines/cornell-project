@@ -259,4 +259,8 @@ $( document ).ready(function() {
   toggleTranscript('phoenix');
   toggleTranscript('cornell');
 
+  $('.close').click(function() {
+    stopAudio();
+  })
+
 }); // document.ready
