@@ -145,7 +145,8 @@ svg {
 @media (max-width: 710px) {
 
   .modal-dialog {
-    max-width: 90%!important;
+    max-width: 95%!important;
+    margin: 10px auto!important;
   }
 
   .btn.prev {
@@ -156,6 +157,11 @@ svg {
   .btn.next {
     border-radius: 0 0 4px 4px!important;
     margin-left: 0!important;
+  }
+
+  .transcript-trigger {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
 }
