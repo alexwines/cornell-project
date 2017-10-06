@@ -1,3 +1,13 @@
+.map-container {
+  margin-top: 40px;
+}
+
+.direction-icon {
+  width: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 svg {
   background-color: #fff;
 }
@@ -89,8 +99,10 @@ svg {
 
 .btn.prev {
   border-radius: 0 0 0 4px!important;
+  margin-right: 1px!important;
 }
 
 .btn.next {
   border-radius: 0 0 4px 0!important;
+  margin-left: 1px!important;
 }
