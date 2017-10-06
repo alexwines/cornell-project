@@ -21,6 +21,7 @@ $( document ).ready(function() {
     $(trigger).click(function(){
       if ( trigger == "#js-new-delhi-prev" ) {
         $(prev).modal('hide');
+        stopAudio();
         zoomOut();
         setTimeout(function() {
           $(next).modal('show');
@@ -56,17 +57,17 @@ $( document ).ready(function() {
 
   zoomLocate = function(city) {
     coords = eval(city);
-    currentZoom = $(".container").data('mapael').zoomData.zoomLevel;
+    currentZoom = $(".map-container").data('mapael').zoomData.zoomLevel;
     zoomArgs = zoomConstructor(coords);
 
     if ( currentZoom == 0 ) {
-      $('.container').trigger('zoom', zoomArgs);
+      $('.map-container').trigger('zoom', zoomArgs);
       flashPlot(city);
       return 0;
     } else {
       zoomOut();
       setTimeout(function() {
-        $('.container').trigger('zoom', zoomArgs);
+        $('.map-container').trigger('zoom', zoomArgs);
         flashPlot(city);
       }, 1100);
       return 1100;
@@ -76,7 +77,7 @@ $( document ).ready(function() {
 
   zoomOut = function() {
     fullMap =  { level: 0, animDuration: 1000 }
-    $('.container').trigger('zoom', fullMap);
+    $('.map-container').trigger('zoom', fullMap);
   }
 
   flashPlot = function(city) {
@@ -97,16 +98,27 @@ $( document ).ready(function() {
     }, index);
   }
 
+  toggleTranscript = function(location) {
+    $( "#js-" + location + "-transcript-trigger" ).click(function() {
+      $( "#js-" + location + "-transcript" ).toggle();
+      if ( $(this).text() == 'Show Transcript' ) {
+        $(this).text('Hide Transcript')
+      } else {
+        $(this).text('Show Transcript')
+      }
+    });
+  }
+
   // Location Coordinates
   start =  coordConstructor(0, 0);
-  newDelhi =  coordConstructor(28.5, 72.2);
+  newDelhi =  coordConstructor(28.6, 76.2);
   california = coordConstructor(37.7, -122.4);
   dominicanRepublic = coordConstructor(18.7, -70.1);
   phoenix = coordConstructor(33.4, -112);
   cornell = coordConstructor(40.7, -74);
 
   // Map generator
-  $('.container').mapael({
+  $('.map-container').mapael({
 
       map: {
 
@@ -119,7 +131,7 @@ $( document ).ready(function() {
         defaultPlot: {
 
           attrs: {
-            fill: "#01BD16",
+            fill: "#FF1934",
             opacity: 0.6
           },
 
@@ -144,12 +156,12 @@ $( document ).ready(function() {
         defaultArea: {
 
           attrs: {
-            fill: "#f4f4e8",
-            stroke: "#ced8d0"
+            fill: "#009CE7",
+            stroke: "#fff"
           },
 
           attrsHover: {
-            fill: "#f4f4e8"
+            fill: "#009CE7"
           }
 
         } // Close default area
@@ -164,6 +176,7 @@ $( document ).ready(function() {
           latitude: newDelhi.lat,
           longitude: newDelhi.longi,
           text: {
+            position: 'bottom',
             content: 'New Delhi',
             attrs : { "font-size": 9 }
           }
@@ -175,6 +188,7 @@ $( document ).ready(function() {
           latitude: california.lat,
           longitude: california.longi,
           text: {
+            position: 'bottom',
             content: 'Bay Area',
             attrs : { "font-size": 9 }
           }
@@ -186,6 +200,7 @@ $( document ).ready(function() {
           latitude: dominicanRepublic.lat,
           longitude: dominicanRepublic.longi,
           text: {
+            position: 'bottom',
             content: 'Dominican Republic',
             attrs : { "font-size": 9 }
           }
@@ -197,6 +212,7 @@ $( document ).ready(function() {
           latitude: phoenix.lat,
           longitude: phoenix.longi,
           text: {
+            position: 'bottom',
             content: 'Phoenix',
             attrs : { "font-size": 9 }
           }
@@ -208,6 +224,7 @@ $( document ).ready(function() {
           latitude: cornell.lat,
           longitude: cornell.longi,
           text: {
+            position: 'bottom',
             content: 'Cornell',
             attrs : { "font-size": 9 }
           }
@@ -222,6 +239,7 @@ $( document ).ready(function() {
   // Show start modal on page load
   $('#js-start-journey-modal').modal('show');
 
+  // Set up event listeners for previous and next buttons on journey modals
   modalInit('#js-start-journey-next', '#js-start-journey-modal', "#js-new-delhi-modal", "newDelhi"); // From Start to New Delhi
   modalInit('#js-new-delhi-prev', '#js-new-delhi-modal', "#js-start-journey-modal", "start"); // From New Delhi to Start
   modalInit('#js-new-delhi-next', '#js-new-delhi-modal', "#js-california-modal", "california"); // From New Delhi to Califonia
@@ -233,5 +251,11 @@ $( document ).ready(function() {
   modalInit('#js-phoenix-next', '#js-phoenix-modal', "#js-cornell-modal", "cornell"); // From California to New Delhi
   modalInit('#js-cornell-prev', '#js-cornell-modal', "#js-phoenix-modal", "phoenix"); // From California to New Delhi
 
+  // Show/Hide transcripts on journey slides
+  toggleTranscript('new-delhi');
+  toggleTranscript('california');
+  toggleTranscript('dominican-republic');
+  toggleTranscript('phoenix');
+  toggleTranscript('cornell');
 
 }); // document.ready
